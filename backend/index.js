@@ -8,8 +8,8 @@ import cors from 'cors';
 import allRoutes from './routes/index.js';
 import User from './models/User.js';
 const app = express();
-const PORT = process.env.PORT || 3000;
 
+const PORT = process.env.PORT || 3000;
 app.use(cors(
   { 
    origin: ["https://frontend-rouge-three-93.vercel.app/auth"],
