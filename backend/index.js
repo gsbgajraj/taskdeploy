@@ -8,13 +8,22 @@ import cors from 'cors';
 import allRoutes from './routes/index.js';
 import User from './models/User.js';
 
+app.use(cors(
+  { 
+   origin: ["https://frontend-rouge-three-93.vercel.app/auth"],
+   methods: ["POST","GET"],
+   credentials: true
+  }
+  ));
+
 mongoose.set('strictQuery', true);
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // middleware
-app.use(cors());
+// app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(cookieParser());
