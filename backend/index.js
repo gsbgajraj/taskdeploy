@@ -7,6 +7,8 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import allRoutes from './routes/index.js';
 import User from './models/User.js';
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(cors(
   { 
@@ -19,8 +21,6 @@ app.use(cors(
 mongoose.set('strictQuery', true);
 
 
-const app = express();
-const PORT = process.env.PORT || 3000;
 
 // middleware
 // app.use(cors());
